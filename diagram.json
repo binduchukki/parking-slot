@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "author": "Shwetha YS",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 77.4, "left": -19.8, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -94.5, "left": -42.5, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -70.8,
+      "left": 205.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -84,
+      "left": 270.6,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -4.8,
+      "left": 162.65,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "ultrasonic1:TRIG", "uno:9", "green", [ "v48", "h28.4" ] ],
+    [ "ultrasonic1:ECHO", "uno:8", "green", [ "v28.8", "h18.4" ] ],
+    [ "led1:A", "uno:7", "green", [ "v86.4", "h-38.4" ] ],
+    [ "bz1:2", "uno:6", "green", [ "v67.2", "h-125.2" ] ],
+    [
+      "ultrasonic1:GND",
+      "uno:GND.1",
+      "black",
+      [ "v0", "h85.2", "v-115.2", "h-211.2", "v172.8", "h163.2", "v9.6" ]
+    ],
+    [ "r1:1", "led1:C", "green", [ "h28.8" ] ],
+    [ "r1:2", "uno:GND.2", "green", [ "h-19.2", "v-164.4", "h220.8", "v441.6", "h-240" ] ],
+    [
+      "bz1:1",
+      "uno:GND.3",
+      "green",
+      [ "v38.4", "h-28.8", "v-124.8", "h86.4", "v374.4", "h-192" ]
+    ]
+  ],
+  "dependencies": {}
+}
